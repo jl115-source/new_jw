@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jl115-source.github.io/new_jw/sitemap.xml
