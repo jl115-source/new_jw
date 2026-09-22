@@ -153,8 +153,7 @@ button { font: inherit; }
   margin: 0;
 }
 
-.intro-grid,
-.background-grid {
+.intro-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(330px, .78fr);
   gap: 78px;
@@ -234,28 +233,72 @@ button { font: inherit; }
 .project-description { margin: 0; color: var(--muted); line-height: 1.55; font-weight: 500; }
 .project-arrow { font-size: 1.45rem; justify-self: end; }
 
-.background-grid { align-items: stretch; }
-.timeline { border-top: 2px solid var(--ink); }
-.timeline-row {
+.background-section .section-body { min-width: 0; }
+.background-heading {
   display: grid;
-  grid-template-columns: minmax(155px, .72fr) 1fr;
-  gap: 24px;
-  padding: 24px 0 26px;
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .72fr);
+  gap: 72px;
+  align-items: end;
+  margin-bottom: 46px;
 }
-.timeline-row span {
+.background-kicker {
+  margin: 0 0 16px;
   font-family: "DM Mono", monospace;
   font-size: .68rem;
   font-weight: 500;
-  letter-spacing: .08em;
-  line-height: 1.55;
+  letter-spacing: .12em;
 }
-.timeline-row p {
+.background-summary {
+  margin: 0 0 7px;
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 2px solid var(--ink);
+  border-left: 1px solid var(--line);
+}
+.education-card {
+  min-height: 215px;
+  padding: 26px 28px 30px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.education-index,
+.education-status {
+  font-family: "DM Mono", monospace;
+  font-size: .66rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+}
+.education-index { color: var(--muted); }
+.education-card h3 {
+  margin: 54px 0 8px;
+  font-family: "Libre Franklin", Helvetica, Arial, sans-serif;
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+}
+.education-card p {
   margin: 0;
   font-family: "Newsreader", Georgia, serif;
-  font-size: 1.42rem;
+  font-size: clamp(1.5rem, 2vw, 2rem);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.13;
+  letter-spacing: -.025em;
+}
+.education-status {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--muted);
 }
 
 .closing-panel {
@@ -325,8 +368,9 @@ button { font: inherit; }
   .hero h1 { font-size: clamp(3.5rem, 8vw, 5.8rem); }
   .section { grid-template-columns: 1fr; gap: 40px; }
   .section-label { padding-top: 0; }
-  .intro-grid,
-  .background-grid { grid-template-columns: 1fr; gap: 48px; }
+  .intro-grid { grid-template-columns: 1fr; gap: 48px; }
+  .background-heading { grid-template-columns: 1fr; gap: 26px; }
+  .background-summary { max-width: 660px; }
 }
 
 @media (max-width: 720px) {
@@ -350,7 +394,9 @@ button { font: inherit; }
   .project-row { grid-template-columns: 1fr 28px; gap: 18px; }
   .project-description { grid-column: 1 / -1; max-width: 94%; }
   .project-arrow { grid-column: 2; grid-row: 1; align-self: end; }
-  .timeline-row { grid-template-columns: 1fr; gap: 9px; }
+  .education-grid { grid-template-columns: 1fr; }
+  .education-card { min-height: 190px; padding: 24px; }
+  .education-card h3 { margin-top: 42px; }
   .closing-panel { margin-left: -14px; margin-right: -14px; padding: 48px 28px 56px; }
   .site-footer { grid-template-columns: 1fr auto; padding: 24px 0; min-height: auto; }
   .site-footer p:nth-child(2) { display: none; }
